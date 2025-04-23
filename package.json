@@ -1,0 +1,29 @@
+{
+    "name": "hyperarc-mcp-server",
+    "version": "1.0.0",
+    "description": "A server application for Hyperarc MCP.",
+    "main": "main.ts",
+    "type": "module",
+    "scripts": {
+        "start": "tsx src/main.ts",
+        "build": "tsc",
+        "lint": "eslint . --ext .ts",
+        "test": "jest",
+        "inspect": "npx @modelcontextprotocol/inspector tsx src/main.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.10.2",
+        "typescript": "^5.8.3",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.19.3",
+        "zod": "^3.24.3"
+    },
+    "devDependencies": {
+        "@modelcontextprotocol/inspector": "^0.10.2",
+        "eslint": "^8.0.0",
+        "jest": "^29.0.0"
+    }
+}
