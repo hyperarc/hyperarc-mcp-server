@@ -1,7 +1,7 @@
 {
     "name": "hyperarc-mcp-server",
     "version": "1.0.0",
-    "description": "A server application for Hyperarc MCP.",
+    "description": "A server application for HyperArc MCP.",
     "main": "main.ts",
     "type": "module",
     "scripts": {
