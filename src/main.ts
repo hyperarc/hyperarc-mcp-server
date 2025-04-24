@@ -1,0 +1,55 @@
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { registerAskTool } from "./tools/ask";
+
+/**
+ * Creates and configures an MCP server to interact with the HyperArc API.
+ * @param accessToken The personal access token for authenticating with HyperArc API
+ * @returns The configured McpServer instance
+ */
+function createHyperArcServer(apiHost: string, accessToken: string) {
+    // Create a new MCP server
+    const server = new McpServer({
+        name: "HyperArc",
+        version: "1.0.0",
+        description: "MCP server for HyperArc memories"
+    });
+
+    // Add the "ask" tool that calls HyperArc's ask endpoint
+    registerAskTool(server, apiHost, accessToken);
+
+    return server;
+}
+
+// Entry point for the MCP server
+async function main() {
+    try {
+        // Get access token from environment variable or command line argument
+        const accessToken = process.env.HYPERARC_TOKEN || process.argv[2];
+        
+        if (!accessToken) {
+            console.error("Error: No access token provided. Please set HYPERARC_TOKEN environment variable or pass as first argument.");
+            process.exit(1);
+        }
+
+        const apiHost = process.env.HYPERARC_API_HOST || "https://api.hyperarc.com";
+
+        // Create server with access token
+        const server = createHyperArcServer(apiHost, accessToken);
+        
+        // Set up stdio transport
+        const transport = new StdioServerTransport();
+        
+        // Connect server to transport
+        await server.connect(transport);
+        
+        // Log that we're ready (this won't be visible to MCP clients)
+        console.error("HyperArc MCP server started and ready to receive messages");
+    } catch (error) {
+        console.error("Failed to start MCP server:", error);
+        process.exit(1);
+    }
+}
+
+// Start the server
+main();
