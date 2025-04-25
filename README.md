@@ -4,8 +4,8 @@ Give your favorite agent access to your HyperArc memories and assets.
 ## Usage
 - Clone the repository and run npm install
 - Get a Hyperarc Personal Access Token
-    - Once you've logged in to https://app.hyperarc.com and created your account, go to htttps://api.hyperarc.com and log in
-    - Enter a name for your token, and click "Generate Api Token" which will download a credentials.json file
+    - Login to [HyperArc](https://app.hyperarc.com).
+    - Go [here](https://api.hyperarc.com) to generate a token which will be downloaded aa credentials.json.
     - Copy the value of the `token` field in credentials.json
 
 ### Claude Desktop
