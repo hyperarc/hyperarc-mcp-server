@@ -13,12 +13,10 @@ Give your favorite agent access to your HyperArc memories and assets.
 {
     "mcpServers": {
         "hyperarc": {
-            "command": "npm",
+            "command": "npx",
             "args": [
-                "start",
-                "--silent",
-                "--prefix",
-                "/mnt/workspace/users/zuyezheng/dev/hyperarc/hyperarc-mcp-server"
+                "-y", 
+                "hyperarc-mcp-server"
             ],
             "env": {
                 "HYPERARC_TOKEN": "hyperarc_your_token"
@@ -43,9 +41,10 @@ Give your favorite agent access to your HyperArc memories and assets.
         "servers": {
             "hyperarc-mcp-server": {
                 "type": "stdio",
-                "command": "npm",
+                "command": "npx",
                 "args": [
-                    "start", "--prefix", "<path to hyperarc-mcp-server>/hyperarc-mcp-server"
+                    "-y", 
+                    "hyperarc-mcp-server"
                 ],
                 "env": {
                     "HYPERARC_TOKEN": "${input:hyperarc-token}"

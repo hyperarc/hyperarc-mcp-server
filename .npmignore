@@ -1,0 +1,23 @@
+# Source files
+src/
+scripts/
+
+# Development files
+.git/
+.github/
+.vscode/
+node_modules/
+*.log
+.eslintrc*
+jest.config.*
+tsconfig.json
+
+# Tests
+__tests__/
+*.test.ts
+*.spec.ts
+
+# Editor and OS specific files
+.DS_Store
+*~
+*.swp
