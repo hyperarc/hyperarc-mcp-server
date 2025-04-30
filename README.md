@@ -55,6 +55,13 @@ Give your favorite agent access to your HyperArc memories and assets.
 }
 ```
 
-### Build
+### Run
 * `export HYPERARC_TOKEN=<token value>`
 * Run the server via `npm start` (or the MCP Inspector via `npm run inspect`)
+
+
+### Build
+```
+npm run build && npm pack
+npm publish
+```
