@@ -2,9 +2,8 @@
 Give your favorite agent access to your HyperArc memories and assets.
 
 ## Usage
-- Get a Hyperarc Personal Access Token.
 - Login to [HyperArc](https://app.hyperarc.com).
-- Go [here](https://api.hyperarc.com) to generate a token.
+- Go to [settings](https://app.hyperarc.com/#/settings) to generate a Hyperarc Personal Access Token.
 
 ### Claude Desktop
 ```json
