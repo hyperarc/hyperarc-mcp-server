@@ -1,7 +1,7 @@
+import {makeRequest} from "@/Utils";
 import {McpServer} from "@modelcontextprotocol/sdk/server/mcp";
-import {z} from "zod";
-import {makeLog, makeRequest} from "../Utils";
 import {CallToolResult} from "@modelcontextprotocol/sdk/types";
+import {z} from "zod";
 
 export const registerSearchTool = (server: McpServer, apiHost: string, accessToken: string) => {
     server.tool(

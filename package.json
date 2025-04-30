@@ -1,29 +1,59 @@
 {
     "name": "hyperarc-mcp-server",
-    "version": "1.0.0",
-    "description": "A server application for HyperArc MCP.",
-    "main": "main.ts",
-    "type": "module",
+    "version": "1.0.1",
+    "description": "HyperArc MCP Server",
+    "homepage": "https://github.com/hyperarc/hyperarc-mcp-server",
+    "keywords": [
+        "hyperarc",
+        "mcp",
+        "model-context-protocol",
+        "ai",
+        "agents",
+        "analytics"
+    ],
+    "author": "HyperArc",
+    "license": "MIT",
+    "main": "dist/main.js",
+    "types": "dist/main.d.ts",
+    "bin": {
+        "hyperarc-mcp-server": "./bin/cli.js"
+    },
+    "exports": {
+        ".": {
+            "import": "./dist/main.js",
+            "types": "./dist/main.d.ts"
+        }
+    },
+    "files": [
+        "dist",
+        "bin",
+        "LICENSE",
+        "README.md"
+    ],
     "scripts": {
         "start": "tsx src/main.ts",
-        "build": "tsc",
+        "build": "tsc && tsc-alias",
         "lint": "eslint . --ext .ts",
         "test": "jest",
         "inspect": "npx @modelcontextprotocol/inspector tsx src/main.ts"
     },
-    "keywords": [],
-    "author": "",
-    "license": "MIT",
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.10.2",
-        "typescript": "^5.8.3",
-        "ts-node": "^10.9.2",
-        "tsx": "^4.19.3",
         "zod": "^3.24.3"
     },
     "devDependencies": {
         "@modelcontextprotocol/inspector": "^0.10.2",
         "eslint": "^8.0.0",
-        "jest": "^29.0.0"
+        "jest": "^29.0.0",
+        "ts-node": "^10.9.2",
+        "ts-patch": "^3.3.0",
+        "tsc-alias": "^1.8.15",
+        "tsconfig-paths": "^4.2.0",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.3",
+        "typescript-transform-paths": "^3.5.5"
+    },
+    "engines": {
+        "node": ">=20.0.0"
     }
 }

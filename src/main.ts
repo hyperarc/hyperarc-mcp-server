@@ -1,9 +1,9 @@
+import {registerAskTool} from "@/tools/Ask";
+import {registerDescribeDatasetTool} from "@/tools/Metadata";
+import {registerSearchTool} from "@/tools/Search";
+import {makeLog} from "@/Utils";
 import {McpServer} from "@modelcontextprotocol/sdk/server/mcp.js";
 import {StdioServerTransport} from "@modelcontextprotocol/sdk/server/stdio.js";
-import {registerAskTool} from "./tools/Ask";
-import {registerSearchTool} from "./tools/Search";
-import {makeLog} from "./Utils";
-import {registerDescribeDatasetTool} from "./tools/Metadata";
 
 
 /**
@@ -33,7 +33,7 @@ const createHyperArcServer = (
 
 
 // Entry point for the MCP server
-async function main() {
+export const main = async () => {
     try {
         // Get access token from environment variable or command line argument
         const accessToken = process.env.HYPERARC_TOKEN || process.argv[2];
@@ -60,7 +60,4 @@ async function main() {
         console.error(makeLog(`Failed to start MCP server: ${error}.`));
         process.exit(1);
     }
-}
-
-// Start the server
-main();
+};
