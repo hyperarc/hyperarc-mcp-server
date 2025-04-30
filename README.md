@@ -2,11 +2,9 @@
 Give your favorite agent access to your HyperArc memories and assets.
 
 ## Usage
-- Clone the repository and run npm install
-- Get a Hyperarc Personal Access Token
-    - Login to [HyperArc](https://app.hyperarc.com).
-    - Go [here](https://api.hyperarc.com) to generate a token which will be downloaded aa credentials.json.
-    - Copy the value of the `token` field in credentials.json
+- Get a Hyperarc Personal Access Token.
+- Login to [HyperArc](https://app.hyperarc.com).
+- Go [here](https://api.hyperarc.com) to generate a token.
 
 ### Claude Desktop
 ```json
@@ -55,9 +53,10 @@ Give your favorite agent access to your HyperArc memories and assets.
 }
 ```
 
-### Run
+### Standalone
+* Clone the repo and run `run npm install`.
 * `export HYPERARC_TOKEN=<token value>`
-* Run the server via `npm start` (or the MCP Inspector via `npm run inspect`)
+* Run the server via `npm start` (or the MCP Inspector via `npm run inspect`).
 
 
 ### Build
