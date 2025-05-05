@@ -1,6 +1,6 @@
 import {registerAskTool} from "@/tools/Ask";
 import {registerDescribeDatasetTool} from "@/tools/Metadata";
-import {registerQueryTool} from "@/tools/Query";
+import {registerSqlTool} from "@/tools/Query";
 import {registerSearchTool} from "@/tools/Search";
 import {makeLog} from "@/Utils";
 import {McpServer} from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -28,7 +28,7 @@ const createHyperArcServer = (
     registerAskTool(server, apiHost, accessToken);
     registerSearchTool(server, apiHost, accessToken);
     registerDescribeDatasetTool(server, apiHost, accessToken);
-    registerQueryTool(server, apiHost, accessToken);
+    registerSqlTool(server, apiHost, accessToken);
 
     return server;
 }

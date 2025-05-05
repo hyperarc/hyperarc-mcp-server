@@ -3,12 +3,12 @@ import {CallToolResult} from "@modelcontextprotocol/sdk/types";
 import {makeRequest} from "@/Utils";
 import {z} from "zod";
 
-export const registerQueryTool = (server: McpServer, apiHost: string, accessToken: string) => {
+export const registerSqlTool = (server: McpServer, apiHost: string, accessToken: string) => {
     server.tool(
-        "hyperarc_query",
+        "hyperarc_sql",
         "Run a sql query through HyperArc.",
         {
-            query: z.string().describe("Question about your data or how your team does analytics."),
+            query: z.string().describe("SQL query to execute on HyperArc."),
         },
         async ({ query }): Promise<CallToolResult> => {
             const url = new URL("/api/v1/query", apiHost);
