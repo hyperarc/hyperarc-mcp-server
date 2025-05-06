@@ -55,16 +55,10 @@ Give your favorite agent access to your HyperArc memories and assets.
 ### Standalone
 * Clone the repo and run `run npm install`.
 * `export HYPERARC_TOKEN=<token value>`
+* `npm run build`
 * Run the server via `npm start` (or the MCP Inspector via `npm run inspect`).
 
-
-### Build
-```
-npm run build && npm pack
-npm publish
-```
-
-### Developing and testing in VS Code
-* Use the above mcp server config for VS Code, but change the last argument from `hyperarc-mcp-server` to `<path to hyperarc-mcp-server code>/hyperarc-mcp-server/bin/cli.js`
-* Run `npm run build` (you'll need to run this each time you make a code change)
-* Start (or restart) the mcp server
+### Development
+* `npm run build`
+* Point `npx` to your local repo instead of `hyperarc-mcp-server` with `<path>/hyperarc-mcp-server/bin/cli.js`.
+* Restart your client which should restart your server.

@@ -31,11 +31,11 @@
         "README.md"
     ],
     "scripts": {
-        "start": "tsx src/main.ts",
+        "start": "tsx bin/cli.js",
         "build": "tsc && tsc-alias",
         "lint": "eslint . --ext .ts",
         "test": "jest",
-        "inspect": "npx @modelcontextprotocol/inspector tsx src/main.ts"
+        "inspect": "npx @modelcontextprotocol/inspector bin/cli.js"
     },
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.10.2",
