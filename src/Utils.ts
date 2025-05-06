@@ -20,16 +20,20 @@ export const makeErrorResponse = (message: string): CallToolResult => {
 
 export const makeRequest = async (
     url: URL,
-    accessToken: string
+    accessToken: string,
+    method: string = "GET",
+    body: Record<string, unknown> | null = null
 ): Promise<CallToolResult> => {
     try {
         // Make the API request with authorization header
         const response = await fetch(url, {
-            method: "GET",
+            method: method,
             headers: {
                 "Authorization": `Token ${accessToken}`,
-                "Accept": "application/json"
-            }
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: body ? JSON.stringify(body) : null
         });
 
         // Handle response

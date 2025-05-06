@@ -63,3 +63,8 @@ Give your favorite agent access to your HyperArc memories and assets.
 npm run build && npm pack
 npm publish
 ```
+
+### Developing and testing in VS Code
+* Use the above mcp server config for VS Code, but change the last argument from `hyperarc-mcp-server` to `<path to hyperarc-mcp-server code>/hyperarc-mcp-server/bin/cli.js`
+* Run `npm run build` (you'll need to run this each time you make a code change)
+* Start (or restart) the mcp server
